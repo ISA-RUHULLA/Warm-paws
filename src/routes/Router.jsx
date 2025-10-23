@@ -7,10 +7,10 @@ import ServiceDetails from "../pages/ServiceDetails";
 import Profile from "../pages/Profile";
 import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Login";
-import SignUp from "../pages/SignUp";
 import ForgotPassword from "../pages/ForgetPassword";
 import NotFound from "../pages/NotFound";
 import ServiceCard from "../components/home_components/ServiceCard";
+import Register from "../pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -49,8 +49,8 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "signup",
-        element: <SignUp />,
+        path: "register",
+        element: <Register />,
       },
       {
         path: "forget-password",

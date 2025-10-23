@@ -1,8 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router';
-import { NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthProvider';
+import { signOut } from 'firebase/auth';
+import userIcon from '../assets/blue-circle-with-white-user.jpg';
 
 const Header = () => {
+    const { user, signOut } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        signOut()
+            .then(() => navigate('/')) // logout successful, go to homepage
+            .catch(err => console.error(err));
+    };
+
     const linkClass = ({ isActive }) =>
         isActive
             ? "text-blue-600 font-semibold border-b-2 border-blue-600"
@@ -20,7 +31,8 @@ const Header = () => {
                     </div>
                     <ul
                         tabIndex={-1}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
+                    >
                         <li><NavLink to="/" className={linkClass}>Home</NavLink></li>
                         <li><NavLink to="/services" className={linkClass}>Service</NavLink></li>
                         <li><NavLink to="/profile" className={linkClass}>Profile</NavLink></li>
@@ -42,8 +54,21 @@ const Header = () => {
                 </ul>
             </div>
 
+            {/* Right side Login/Logout */}
             <div className="navbar-end">
-                <button className="btn bg-base-100">Login</button>
+                {user ? (
+                    <div className='flex gap-2'>
+                        <img src={userIcon} alt="user" className='w-10 h-10' />
+                        <button onClick={handleLogout} className="btn bg-base-100">
+                            Logout
+                        </button>
+
+                    </div>
+                ) : (
+                    <Link to="/auth/login" className="btn bg-base-100">
+                        Login
+                    </Link>
+                )}
             </div>
         </div>
     );
