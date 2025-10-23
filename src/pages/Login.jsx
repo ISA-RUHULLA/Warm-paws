@@ -2,12 +2,14 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { useNavigate, Link } from "react-router-dom";
 import Register from "./Register";
-import { Links } from "react-router";
+import { Links, useLocation } from "react-router";
 import toast from "react-hot-toast";
 
 const Login = () => {
     const { signIn, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -17,7 +19,7 @@ const Login = () => {
         signIn(email, password)
             .then((res) => {
                 console.log("Logged in:", res.user);
-                navigate("/"); // redirect to homepage after login
+                navigate(from, { replace: true });
             })
             .catch((err) => {
                 console.error(err.message);
@@ -30,7 +32,7 @@ const Login = () => {
         signInWithGoogle()
             .then((res) => {
                 console.log("Google login:", res.user);
-                navigate("/"); // redirect to homepage
+                navigate(from, { replace: true }); 
             })
             .catch((err) => {
                 console.error(err.message);
