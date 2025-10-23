@@ -13,7 +13,7 @@ const Header = () => {
         logOut()
             .then(() => navigate('/'))
             .catch(err => console.error(err));
-        toast.success("Logged out successfully ✅");
+        toast.success("Logged out successfully ");
     };
 
     const linkClass = ({ isActive }) =>

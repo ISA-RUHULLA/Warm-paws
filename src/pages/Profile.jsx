@@ -1,69 +1,120 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
-import { updateProfile } from "firebase/auth";
+import userIcon from "../assets/blue-circle-with-white-user.jpg";
 import toast from "react-hot-toast";
+import { updateProfile } from "firebase/auth";
+import { auth } from "../firebase/firebase.config";
+
 
 const Profile = () => {
-  const { user } = useContext(AuthContext);
-  const [name, setName] = useState(user?.displayName || "");
-  const [photo, setPhoto] = useState(user?.photoURL || "");
+  const { user, setUser } = useContext(AuthContext);
+  const [showUpdate, setShowUpdate] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const [formData, setFormData] = useState({
+    name: user?.displayName || "",
+    email: user?.email || "",
+    photoURL: user?.photoURL || "",
+  });
+
+  // handle input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // update profile to firebase
   const handleUpdate = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     try {
-      await updateProfile(user, {
-        displayName: name,
-        photoURL: photo,
+      await updateProfile(auth.currentUser, {
+        displayName: formData.name,
+        photoURL: formData.photoURL,
       });
-      toast.success("✅ Profile updated successfully!");
+
+      // local user state update
+      setUser({
+        ...auth.currentUser,
+      });
+
+      toast.success(" Profile updated successfully!");
+      setShowUpdate(false);
     } catch (error) {
       console.error(error);
-      toast.error("Failed to update profile!");
+      toast.error(" Failed to update profile!");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="w-11/12 mx-auto my-10">
-      <div className="border p-6 rounded-2xl shadow-lg flex flex-col md:flex-row gap-8 items-center md:items-start bg-gray-900 text-white">
+    <div className="w-11/12 md:w-2/3 mx-auto my-10">
+      <div className="border p-6 rounded-2xl shadow-lg flex flex-col md:flex-row gap-8 items-center md:items-start bg-gray-800">
         <img
-          src={user?.photoURL || "https://via.placeholder.com/150"}
-          alt="Profile"
-          className="w-40 h-40 rounded-full object-cover border-4 border-blue-500"
+          src={formData.photoURL || userIcon}
+          alt={formData.name}
+          className="w-40 h-40 object-cover rounded-full"
         />
 
-        <div className="flex-1 space-y-3">
-          <h2 className="text-3xl font-bold">{user?.displayName || "No Name"}</h2>
-          <p className="text-lg">{user?.email}</p>
+        <div className="flex-1 space-y-3 text-white">
+          <h2 className="text-3xl font-bold">
+            {user?.displayName || "No Name"}
+          </h2>
+          <p>
+            Email: <span className="font-semibold">{user?.email}</span>
+          </p>
 
-          <form onSubmit={handleUpdate} className="mt-4 flex flex-col gap-3 bg-white/10 p-4 rounded-lg">
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Update name"
-              className="border p-2 rounded text-white"
-            />
-            <input
-              type="text"
-              value={photo}
-              onChange={(e) => setPhoto(e.target.value)}
-              placeholder="Update photo URL"
-              className="border p-2 rounded text-white"
-            />
+          <div className="flex gap-4 mt-6">
             <button
-              type="submit"
-              disabled={loading}
-              className={`bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition ${
-                loading ? "opacity-60 cursor-not-allowed" : ""
-              }`}
+              onClick={() => setShowUpdate(!showUpdate)}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition"
             >
-              {loading ? "Updating..." : "Update Profile"}
+              {showUpdate ? "Cancel Update" : "Update Profile"}
             </button>
-          </form>
+          </div>
+
+          {showUpdate && (
+            <form
+              onSubmit={handleUpdate}
+              className="mt-6 flex flex-col gap-3 border p-4 rounded-lg bg-white/10 backdrop-blur-md text-black"
+            >
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                value={formData.name}
+                onChange={handleChange}
+                className="border p-2 rounded"
+              />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                readOnly
+                className="border p-2 rounded bg-gray-100 cursor-not-allowed"
+              />
+              <input
+                type="text"
+                name="photoURL"
+                placeholder="Enter photo URL"
+                value={formData.photoURL}
+                onChange={handleChange}
+                className="border p-2 rounded"
+              />
+
+              <button
+                type="submit"
+                disabled={loading}
+                className={`bg-green-600 hover:bg-green-700 text-white py-2 rounded transition ${
+                  loading && "opacity-70 cursor-not-allowed"
+                }`}
+              >
+                {loading ? "Saving..." : "Save Changes"}
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </div>

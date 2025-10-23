@@ -51,7 +51,7 @@ const ServiceDetails = () => {
     localStorage.setItem("bookedServices", JSON.stringify(updated));
 
     setIsBooked(true);
-    toast.success(`✅ "${service.serviceName}" booked successfully!`);
+    toast.success(` "${service.serviceName}" booked successfully!`);
     setFormData({ name: "", email: "" });
     setShowForm(false); 
   };
@@ -102,7 +102,7 @@ const ServiceDetails = () => {
                   : "bg-blue-600 hover:bg-blue-700 text-white"
               }`}
             >
-              {isBooked ? "Booked ✅" : showForm ? "Cancel" : "Book Now"}
+              {isBooked ? "Booked " : showForm ? "Cancel" : "Book Now"}
             </button>
           </div>
 
