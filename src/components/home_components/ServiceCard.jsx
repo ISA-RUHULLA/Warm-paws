@@ -28,8 +28,12 @@ const ServiceCard = () => {
                             className='w-full h-48 object-cover rounded-lg mb-3'
                         />
                         <h2 className='text-lg font-semibold'>{service.serviceName}</h2>
-                        <p className='text-sm text-gray-600'>{service.providerName}</p>
-                        <p className='font-bold mt-2'>${service.price}</p>
+                        <p className="text-yellow-600 font-medium">
+                            Rating: ⭐ {service.rating}
+                        </p>
+                        <p className="text-lg font-semibold text-white">
+                            Price: ${service.price}
+                        </p>
                         <button
                             className="btn btn-block bg-white text-black"
                             onClick={() => navigate(`/service/${service.serviceId}`)}

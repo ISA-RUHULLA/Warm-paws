@@ -6,18 +6,17 @@ const ServiceDetails = () => {
   const { id } = useParams();
   const [service, setService] = useState(null);
   const [isBooked, setIsBooked] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "" });
   const navigate = useNavigate();
 
   useEffect(() => {
     fetch("/data.json")
       .then((res) => res.json())
       .then((data) => {
-        const selected = data.find(
-          (item) => item.serviceId === parseInt(id)
-        );
+        const selected = data.find((item) => item.serviceId === parseInt(id));
         setService(selected);
 
-        // localStorage check for booked services
         const bookedItems =
           JSON.parse(localStorage.getItem("bookedServices")) || [];
         const alreadyBooked = bookedItems.some(
@@ -27,16 +26,34 @@ const ServiceDetails = () => {
       });
   }, [id]);
 
-  const handleBookNow = () => {
+  // form input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // form submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!formData.name || !formData.email) {
+      toast.error("Please fill in all fields!");
+      return;
+    }
+
     const bookedItems =
       JSON.parse(localStorage.getItem("bookedServices")) || [];
 
-    // add current service to booked list
-    const updated = [...bookedItems, service];
+    const updated = [
+      ...bookedItems,
+      { ...service, user: formData }, // save with user info
+    ];
     localStorage.setItem("bookedServices", JSON.stringify(updated));
-    setIsBooked(true);
 
+    setIsBooked(true);
     toast.success(`✅ "${service.serviceName}" booked successfully!`);
+    setFormData({ name: "", email: "" });
+    setShowForm(false); // hide form after submit
   };
 
   if (!service)
@@ -69,27 +86,56 @@ const ServiceDetails = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
-            {/* Back Button */}
             <button
               onClick={() => navigate(-1)}
-              className="btn bg-gray-200 text-gray-800 hover:bg-gray-300 px-5 py-2 rounded-lg font-medium transition"
+              className="bg-gray-200 text-gray-800 hover:bg-gray-300 px-5 py-2 rounded-lg font-medium transition"
             >
               ← Back
             </button>
 
-            {/* Book Now Button */}
             <button
-              onClick={handleBookNow}
+              onClick={() => setShowForm(!showForm)}
               disabled={isBooked}
-              className={`btn px-6 py-2 rounded-lg font-semibold transition ${
+              className={`px-6 py-2 rounded-lg font-semibold transition ${
                 isBooked
                   ? "bg-gray-400 text-white cursor-not-allowed"
                   : "bg-blue-600 hover:bg-blue-700 text-white"
               }`}
             >
-              {isBooked ? "Booked ✅" : "Book Now"}
+              {isBooked ? "Booked ✅" : showForm ? "Cancel" : "Book Now"}
             </button>
           </div>
+
+          {/* Form show when Book Now clicked */}
+          {showForm && !isBooked && (
+            <form
+              onSubmit={handleSubmit}
+              className="mt-6 flex flex-col gap-3 border p-4 rounded-lg bg-white/10 backdrop-blur-md"
+            >
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                value={formData.name}
+                onChange={handleChange}
+                className="border p-2 rounded text-black"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
+                className="border p-2 rounded text-black"
+              />
+              <button
+                type="submit"
+                className="bg-green-600 hover:bg-green-700 text-white py-2 rounded transition"
+              >
+                Confirm Booking
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </div>

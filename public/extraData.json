@@ -1,0 +1,50 @@
+{
+    "winterCareTips": [
+        {
+            "id": 1,
+            "title": "Keep Them Warm",
+            "desc": "Provide warm bedding and limit outdoor exposure during cold weather."
+        },
+        {
+            "id": 2,
+            "title": "Hydration is Key",
+            "desc": "Pets need fresh water even in winter to stay hydrated and healthy."
+        },
+        {
+            "id": 3,
+            "title": "Protect Their Paws",
+            "desc": "Use paw wax or pet booties to prevent cracking and irritation from snow or salt."
+        },
+        {
+            "id": 4,
+            "title": "Maintain Regular Exercise",
+            "desc": "Engage your pets in indoor activities to keep them fit during cold months."
+        }
+    ],
+    "expertVets": [
+        {
+            "id": 1,
+            "name": "Dr. Sarah Johnson",
+            "specialty": "Veterinary Surgeon",
+            "image": "https://freedesignfile.com/upload/2018/03/Pet-doctor-Stock-Photo-02.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Dr. Mark Lee",
+            "specialty": "Animal Nutritionist",
+            "image": "https://media.istockphoto.com/id/1303362255/photo/young-happy-veterinary-nurse-smiling-while-playing-with-a-dog-high-quality-photo.jpg?s=612x612&w=0&k=20&c=_kIKIzB4GF5WDLCf2yK1XMQk9JtxoL9XPK_nJmTZ5JQ="
+        },
+        {
+            "id": 3,
+            "name": "Dr. Emma Brown",
+            "specialty": "Pet Care Consultant",
+            "image": "https://content3.jdmagicbox.com/comp/def_content_category/veterinary-doctors/360-f-336171725-7yfqslwtjppxnphkrfgkz0rwtvbsu0tr-veterinary-doctors-3-5jirm.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Dr. Alex Carter",
+            "specialty": "Emergency Vet Specialist",
+            "image": "https://static.vecteezy.com/system/resources/previews/061/038/031/large_2x/positive-man-is-holding-animal-dog-in-veterinarian-clinic-with-male-doctor-photo.JPG"
+        }
+    ]
+}
