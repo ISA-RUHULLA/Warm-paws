@@ -11,7 +11,7 @@ const Header = () => {
 
     const handleLogout = () => {
         logOut()
-            .then(() => navigate('/')) 
+            .then(() => navigate('/'))
             .catch(err => console.error(err));
         toast.success("Logged out successfully ✅");
     };
@@ -61,12 +61,20 @@ const Header = () => {
                 {loading ? (<div className="flex justify-center items-center w-[100px] h-[40px]">
                     <span className="loading loading-spinner loading-md"></span>
                 </div>) : user ? (
-                    <div className='flex gap-2'>
-                        <img src={user.photoURL || userIcon} alt="user" className='w-10 h-10' />
-                        <button onClick={handleLogout} className="btn bg-base-100">
+                    <div className="relative flex items-center">
+                        <div className="group relative">
+                            <img
+                                src={user.photoURL || userIcon}
+                                alt="user"
+                                className="w-10 h-10 rounded-full cursor-pointer"
+                            />
+                            <span className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                {user.displayName || "No Name"}
+                            </span>
+                        </div>
+                        <button onClick={handleLogout} className="btn bg-base-100 ml-2">
                             Logout
                         </button>
-
                     </div>
                 ) : (
                     <Link to="/auth/login" className="btn bg-base-100">
