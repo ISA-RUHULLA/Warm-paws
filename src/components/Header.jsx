@@ -1,17 +1,19 @@
 import React, { useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider';
-import { signOut } from 'firebase/auth';
+
 import userIcon from '../assets/blue-circle-with-white-user.jpg';
+import toast from 'react-hot-toast';
 
 const Header = () => {
-    const { user, signOut } = useContext(AuthContext);
+    const { user, logOut, loading } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        signOut()
-            .then(() => navigate('/')) // logout successful, go to homepage
+        logOut()
+            .then(() => navigate('/')) 
             .catch(err => console.error(err));
+        toast.success("Logged out successfully ✅");
     };
 
     const linkClass = ({ isActive }) =>
@@ -56,9 +58,11 @@ const Header = () => {
 
             {/* Right side Login/Logout */}
             <div className="navbar-end">
-                {user ? (
+                {loading ? (<div className="flex justify-center items-center w-[100px] h-[40px]">
+                    <span className="loading loading-spinner loading-md"></span>
+                </div>) : user ? (
                     <div className='flex gap-2'>
-                        <img src={userIcon} alt="user" className='w-10 h-10' />
+                        <img src={user.photoURL || userIcon} alt="user" className='w-10 h-10' />
                         <button onClick={handleLogout} className="btn bg-base-100">
                             Logout
                         </button>
