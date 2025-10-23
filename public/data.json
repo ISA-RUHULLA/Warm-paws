@@ -8,7 +8,7 @@
     "rating": 4.9,
     "slotsAvailable": 4,
     "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
-    "image": "https://www.shutterstock.com/image-photo/portrait-cute-warmly-dressed-pug-600nw-2259186825.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSBinipCt-4aKV_dU4zI2gH37fk4lcPKc96A&s",
     "category": "Clothing"
   },
   {
@@ -20,7 +20,7 @@
     "rating": 4.8,
     "slotsAvailable": 3,
     "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
-    "image": "https://www.shutterstock.com/image-photo/portrait-cute-warmly-dressed-pug-600nw-2259186825.jpg",
+    "image": "https://i0.wp.com/www.tlcpets.ca/wp-content/uploads/2019/12/Before-and-After-Prevent-Snow-and-Ice-Balls-in-Your-Dogs-Feet-with-TLC-Dog-Grooming.jpg?resize=1080%2C762&ssl=1",
     "category": "Grooming"
   },
   {
@@ -32,7 +32,7 @@
     "rating": 4.7,
     "slotsAvailable": 5,
     "description": "Capture festive memories of your pets with professional photography.",
-    "image": "https://www.shutterstock.com/image-photo/portrait-cute-warmly-dressed-pug-600nw-2259186825.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRol8cgj6abQbF2b-ye3S1HjYthMu_Oi1Oypg&s",
     "category": "Photography"
   },
   {
@@ -44,7 +44,7 @@
     "rating": 4.6,
     "slotsAvailable": 6,
     "description": "Indoor exercise sessions to keep your dog fit and active during winter.",
-    "image": "https://www.shutterstock.com/image-photo/portrait-cute-warmly-dressed-pug-600nw-2259186825.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE-c6qo60cQe_M6QZPyi3hDyOEMf2guKcYag&s",
     "category": "Fitness"
   },
   {
@@ -56,7 +56,7 @@
     "rating": 4.8,
     "slotsAvailable": 8,
     "description": "Trim, buff, and treat paws to prevent winter cracking.",
-    "image": "https://www.shutterstock.com/image-photo/portrait-cute-warmly-dressed-pug-600nw-2259186825.jpg",
+    "image": "https://naturaldog.com/cdn/shop/collections/paw.jpg?crop=center&height=630&v=1681932848&width=1200",
     "category": "Grooming"
   },
   {
@@ -68,7 +68,7 @@
     "rating": 4.9,
     "slotsAvailable": 3,
     "description": "Custom sweaters and hoodies designed for comfort and style.",
-    "image": "https://www.shutterstock.com/image-photo/portrait-cute-warmly-dressed-pug-600nw-2259186825.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSew4qEK1hGogclYEyDA6Xltt4dk1gEMyCccQ&s",
     "category": "Clothing"
   },
   {
@@ -80,7 +80,7 @@
     "rating": 4.7,
     "slotsAvailable": 4,
     "description": "Complete winter grooming with shampoo, conditioner, and paw treatment.",
-    "image": "https://www.shutterstock.com/image-photo/portrait-cute-warmly-dressed-pug-600nw-2259186825.jpg",
+    "image": "https://www.bombayshavingcompany.com/cdn/shop/articles/Absolute_Winter_Skincare_Essentials_b88d6b5b-d676-416c-9374-a9edb08777d4.png?v=1759211530",
     "category": "Grooming"
   },
   {
@@ -92,7 +92,7 @@
     "rating": 4.9,
     "slotsAvailable": 10,
     "description": "Special winter-themed treats and snacks for dogs and cats.",
-    "image": "https://i.postimg.cc/example8.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROgbR2pgexVJAkoqU3Hw22swcWLpUuIF0rfw&s",
     "category": "Food"
   },
   {
@@ -104,43 +104,7 @@
     "rating": 4.6,
     "slotsAvailable": 5,
     "description": "Keep your dog agile and active indoors during cold months.",
-    "image": "https://i.postimg.cc/example9.png",
+    "image": "https://thumbs.dreamstime.com/b/dog-performs-agility-jump-over-training-equipment-indoor-facility-daytime-black-skillfully-leaps-wooden-obstacle-351019581.jpg",
     "category": "Fitness"
-  },
-  {
-    "serviceId": 10,
-    "serviceName": "Winter Pet Safety Consultation",
-    "providerName": "SafePaws Experts",
-    "providerEmail": "consult@safe-paws.com",
-    "price": 70,
-    "rating": 4.8,
-    "slotsAvailable": 2,
-    "description": "Expert advice on keeping pets safe, warm, and healthy during winter.",
-    "image": "https://i.postimg.cc/example10.png",
-    "category": "Consultation"
-  },
-  {
-    "serviceId": 11,
-    "serviceName": "Pet Massage & Relaxation Therapy",
-    "providerName": "CalmPaws Studio",
-    "providerEmail": "relax@calmpaws.com",
-    "price": 55,
-    "rating": 4.9,
-    "slotsAvailable": 4,
-    "description": "Gentle pet massage therapy to relieve stress and improve blood circulation during cold weather.",
-    "image": "https://i.postimg.cc/example11.png",
-    "category": "Therapy"
-  },
-  {
-    "serviceId": 12,
-    "serviceName": "Dog Winter Boots Fitting",
-    "providerName": "PawStyle Shop",
-    "providerEmail": "info@pawstyle.com",
-    "price": 28,
-    "rating": 4.7,
-    "slotsAvailable": 7,
-    "description": "Durable and comfortable boots fitted for dogs to protect their paws from cold and ice.",
-    "image": "https://i.postimg.cc/example12.png",
-    "category": "Clothing"
   }
 ]

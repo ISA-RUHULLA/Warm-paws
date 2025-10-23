@@ -1,14 +1,15 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { useNavigate, Link } from "react-router-dom";
-import Register from "./Register";
 import { Links, useLocation } from "react-router";
 import toast from "react-hot-toast";
 import { Eye, EyeOff } from "lucide-react";
 
+
 const Login = () => {
     const { signIn, signInWithGoogle } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
+
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -44,6 +45,7 @@ const Login = () => {
             });
     };
 
+
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -56,6 +58,7 @@ const Login = () => {
                                 name="email"
                                 className="input input-bordered w-full"
                                 placeholder="Email"
+                                onChange={(e) => setEmail(e.target.value)}
                                 required
                             />
                             <label className="label">Password</label>
@@ -69,8 +72,10 @@ const Login = () => {
                                 </span>
                             </div>
                             <div className="mt-2">
-                                <Link to="/auth/forget-password" className="link link-hover text-sm">
-                                    Forgot password?
+                                <Link to="/auth/forget-password"
+                                    className="text-blue-600 underline hover:text-blue-800"
+                                >
+                                    Forgot Password?
                                 </Link>
                             </div>
                             <button className="btn btn-neutral mt-4 w-full">Login</button>
