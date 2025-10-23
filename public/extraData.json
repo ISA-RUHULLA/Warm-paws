@@ -1,25 +1,35 @@
 {
     "winterCareTips": [
         {
-            "id": 1,
-            "title": "Keep Them Warm",
-            "desc": "Provide warm bedding and limit outdoor exposure during cold weather."
-        },
-        {
-            "id": 2,
-            "title": "Hydration is Key",
-            "desc": "Pets need fresh water even in winter to stay hydrated and healthy."
-        },
-        {
-            "id": 3,
-            "title": "Protect Their Paws",
-            "desc": "Use paw wax or pet booties to prevent cracking and irritation from snow or salt."
-        },
-        {
-            "id": 4,
-            "title": "Maintain Regular Exercise",
-            "desc": "Engage your pets in indoor activities to keep them fit during cold months."
-        }
+    "id": 1,
+    "title": "Keep Them Warm",
+    "desc": "Provide warm bedding and limit outdoor exposure during cold weather."
+  },
+  {
+    "id": 2,
+    "title": "Hydration is Key",
+    "desc": "Pets need fresh water even in winter to stay hydrated and healthy."
+  },
+  {
+    "id": 3,
+    "title": "Protect Their Paws",
+    "desc": "Use paw wax or pet booties to prevent cracking and irritation from snow or salt."
+  },
+  {
+    "id": 4,
+    "title": "Maintain Regular Exercise",
+    "desc": "Engage your pets in indoor activities to keep them fit during cold months."
+  },
+  {
+    "id": 5,
+    "title": "Check Their Skin and Coat",
+    "desc": "Winter air can dry out your pet’s skin. Brush regularly and use vet-approved moisturizers."
+  },
+  {
+    "id": 6,
+    "title": "Schedule Regular Vet Visits",
+    "desc": "Cold weather can worsen joint pain and arthritis. Regular vet checkups keep pets healthy year-round."
+  }
     ],
     "expertVets": [
         {

@@ -46,14 +46,14 @@ const ServiceDetails = () => {
 
     const updated = [
       ...bookedItems,
-      { ...service, user: formData }, // save with user info
+      { ...service, user: formData }, 
     ];
     localStorage.setItem("bookedServices", JSON.stringify(updated));
 
     setIsBooked(true);
     toast.success(`✅ "${service.serviceName}" booked successfully!`);
     setFormData({ name: "", email: "" });
-    setShowForm(false); // hide form after submit
+    setShowForm(false); 
   };
 
   if (!service)
@@ -67,7 +67,7 @@ const ServiceDetails = () => {
         <img
           src={service.image}
           alt={service.serviceName}
-          className="w-full md:w-1/2 h-64 object-cover rounded-xl"
+          className="w-full md:w-1/2  object-cover rounded-xl"
         />
 
         <div className="flex-1 space-y-3">
@@ -118,7 +118,7 @@ const ServiceDetails = () => {
                 placeholder="Enter your name"
                 value={formData.name}
                 onChange={handleChange}
-                className="border p-2 rounded text-black"
+                className="border p-2 rounded text-white"
               />
               <input
                 type="email"
@@ -126,7 +126,7 @@ const ServiceDetails = () => {
                 placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleChange}
-                className="border p-2 rounded text-black"
+                className="border p-2 rounded text-white"
               />
               <button
                 type="submit"

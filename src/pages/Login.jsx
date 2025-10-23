@@ -19,6 +19,7 @@ const Login = () => {
         signIn(email, password)
             .then((res) => {
                 console.log("Logged in:", res.user);
+                toast.success("Login successful ✅");
                 navigate(from, { replace: true });
             })
             .catch((err) => {
@@ -32,6 +33,7 @@ const Login = () => {
         signInWithGoogle()
             .then((res) => {
                 console.log("Google login:", res.user);
+                toast.success("Logged in with Google ✅");
                 navigate(from, { replace: true }); 
             })
             .catch((err) => {
