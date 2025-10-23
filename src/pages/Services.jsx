@@ -19,8 +19,8 @@ const Service = () => {
                 </h2>
             </div>
 
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6'>
-                {services.slice(0, 4).map((service) => (
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
+                {services.slice(0, 6).map((service) => (
                     <div key={service.serviceId} className='border-2 rounded-xl shadow-md p-4 flex flex-col items-center'>
                         <img
                             src={service.image}

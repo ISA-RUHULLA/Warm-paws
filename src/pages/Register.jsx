@@ -77,6 +77,7 @@ const Register = () => {
         <form onSubmit={handleRegister} className="card-body max-w-sm mx-auto">
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                 <div className="card-body">
+                    <h2 className="text-center text-2xl font-bold">Register</h2>
                     <fieldset className="fieldset">
                         <label className="label">Name</label>
                         <input type="text" name="name" className="input" placeholder="Your Name" required />

@@ -4,7 +4,7 @@ import Footer from "../components/Footer"
 
 const Homelayout = () => {
   return (
-    <div>
+    <div className="container mx-auto">
       <header>
         <Header/>
       </header>

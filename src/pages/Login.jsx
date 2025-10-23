@@ -51,6 +51,7 @@ const Login = () => {
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                 <div className="card-body">
                     <form onSubmit={handleLogin}>
+                            <h2 className="text-center text-2xl font-bold">Login</h2>
                         <fieldset className="fieldset">
                             <label className="label">Email</label>
                             <input

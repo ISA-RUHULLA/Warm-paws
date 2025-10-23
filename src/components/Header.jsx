@@ -68,7 +68,7 @@ const Header = () => {
                                 alt="user"
                                 className="w-10 h-10 rounded-full cursor-pointer"
                             />
-                            <span className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity z-[9999]">
                                 {user.displayName || "No Name"}
                             </span>
                         </div>
