@@ -1,0 +1,22 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "image": "https://videocdn.cdnpk.net/videos/2a94fced-4b9f-4718-a463-416a920c4968/horizontal/thumbnails/large.jpg?semt=ais_hybrid&item_id=2795007&w=740&q=80",
+      "title": "Snuggle Season for Your Furry Friends",
+      "subtitle": "Wrap your pets in warmth and love this cozy winter"
+    },
+    {
+      "id": 2,
+      "image": "https://img.freepik.com/premium-photo/freelancer-indian-man-having-fun-with-his-dog-while-working-from-home_695242-18990.jpg",
+      "title": "Cuddle, Care & Comfort",
+      "subtitle": "Keep your pets close and comfy during the chilly days"
+    },
+    {
+      "id": 3,
+      "image": "https://mensline.org.au/wp-content/uploads/2021/05/Five-mental-health-benefits-of-pet-ownership-V2header-1600x1067.jpg",
+      "title": "Warm Hearts, Cozy Homes",
+      "subtitle": "Every pet deserves love, warmth, and gentle winter care"
+    }
+  ]
+}
