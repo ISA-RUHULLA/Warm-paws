@@ -10,6 +10,7 @@ import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import ForgotPassword from "../pages/ForgetPassword";
 import NotFound from "../pages/NotFound";
+import ServiceCard from "../components/home_components/ServiceCard";
 
 const router = createBrowserRouter([
   {
@@ -22,14 +23,12 @@ const router = createBrowserRouter([
       },
       {
         path: "services",
-        element: <Services />,
+        element: <ServiceCard />,
       },
       {
         path: "service/:id",
         element: (
-          <PrivateRoute>
             <ServiceDetails />
-          </PrivateRoute>
         ),
       },
       {

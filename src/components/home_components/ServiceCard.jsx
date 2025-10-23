@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
-const Service = () => {
+const ServiceCard = () => {
     const [services, setServices] = useState([]);
     const navigate = useNavigate();
 
@@ -12,15 +12,15 @@ const Service = () => {
     }, []);
 
     return (
-        <div className='w-11/12 mx-auto bg-gray-500 p-4 gap-5'>
+        <div className='w-11/12 mx-auto gap-5'>
             <div className='mt-5'>
                 <h2 className='flex justify-center text-2xl font-bold mb-4'>
-                    New Arrivals Product
+                    All Products ({services.length})
                 </h2>
             </div>
 
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6'>
-                {services.slice(0, 4).map((service) => (
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
+                {services.map((service) => (
                     <div key={service.serviceId} className='border-2 rounded-xl shadow-md p-4 flex flex-col items-center'>
                         <img
                             src={service.image}
@@ -36,21 +36,11 @@ const Service = () => {
                         >
                             See Details
                         </button>
-
                     </div>
                 ))}
-            </div>
-
-            <div className='flex justify-center my-5'>
-                <button
-                    onClick={() => navigate('/services')}
-                    className="btn btn-primary"
-                >
-                    See More Products
-                </button>
             </div>
         </div>
     );
 };
 
-export default Service;
+export default ServiceCard;
