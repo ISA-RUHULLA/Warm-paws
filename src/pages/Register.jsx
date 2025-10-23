@@ -1,25 +1,34 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthProvider";
 import { Link, useNavigate } from "react-router";
+import toast from "react-hot-toast";
 
 const Register = () => {
     const { createUser, signInWithGoogle } = useContext(AuthContext);
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
 
     const handleRegister = e => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         createUser(email, password)
-            .then(res => console.log("User created:", res.user))
-            .catch(err => console.error(err.message));
+            .then(res => {
+                console.log("User created:", res.user);
+                toast.success("Registration successful ✅");
+                navigate("/"); // redirect to homepage
+            })
+            .catch(err => {
+                console.error(err.message);
+                toast.error(err.message);
+            });
     };
 
     const handleGoogleLogin = () => {
         signInWithGoogle()
             .then((res) => {
                 console.log("Google login:", res.user);
-                Navigate("/"); // redirect to homepage
+                toast.success("Logged in with Google ✅");
+                navigate("/"); // redirect to homepage
             })
             .catch((err) => console.error(err.message));
     };
