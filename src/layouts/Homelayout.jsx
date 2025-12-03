@@ -4,18 +4,13 @@ import Footer from "../components/Footer"
 
 const Homelayout = () => {
   return (
-    <div className="container mx-auto">
-      <header>
-        <Header/>
-      </header>
+    <div>
 
+      <Header />
       <main>
         <Outlet />
       </main>
-
-      <footer>
-        <Footer/>
-      </footer>
+        <Footer />
     </div>
   );
 };

@@ -62,23 +62,24 @@ const ServiceDetails = () => {
     );
 
   return (
-    <div className="w-11/12 mx-auto my-10">
-      <div className="border p-6 rounded-2xl shadow-lg flex flex-col md:flex-row gap-8 items-center md:items-start">
+    <div className="bg-blue-200 ">
+      <div className=" container mx-auto p-6 md:p-12 lg:p-20">
+        <div className="border p-6 rounded-2xl shadow-lg flex flex-col md:flex-row gap-8 items-center md:items-start">
         <img
           src={service.image}
           alt={service.serviceName}
           className="w-full md:w-1/2  object-cover rounded-xl"
         />
 
-        <div className="flex-1 space-y-3">
-          <h2 className="text-3xl font-bold text-white">
+        <div className="flex-1 space-y-3 shadow-md p-4 rounded-lg bg-blue-100">
+          <h2 className="text-3xl font-bold text-black">
             {service.serviceName}
           </h2>
-          <p className="text-white">
+          <p className="text-black">
             Provider: <span className="font-semibold">{service.providerName}</span>
           </p>
-          <p className="text-white">Email: {service.providerEmail}</p>
-          <p className="text-lg font-semibold text-white">
+          <p className="text-black">Email: {service.providerEmail}</p>
+          <p className="text-lg font-semibold text-black">
             Price: ${service.price}
           </p>
           <p className="text-yellow-600 font-medium">
@@ -88,7 +89,7 @@ const ServiceDetails = () => {
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
             <button
               onClick={() => navigate(-1)}
-              className="bg-gray-200 text-gray-800 hover:bg-gray-300 px-5 py-2 rounded-lg font-medium transition"
+              className="bg-blue-400 text-gray-800 hover:bg-gray-300 px-5 py-2 rounded-lg font-medium transition"
             >
               ← Back
             </button>
@@ -137,6 +138,7 @@ const ServiceDetails = () => {
             </form>
           )}
         </div>
+      </div>
       </div>
     </div>
   );

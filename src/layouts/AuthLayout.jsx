@@ -4,22 +4,18 @@ import Footer from "../components/Footer";
 
 const AuthLayout = () => {
   return (
-    <div className="container mx-auto">
-      <header>
+    <div>
         <Header />
-      </header>
       <main>
-        <div className="flex flex-col justify-center items-center p-5">
-          <h1 className="text-4xl font-bold">Welcome to WarmPaws</h1>
+        <div className="flex flex-col justify-center items-center text-black bg-white p-5">
+          <h1 className="text-4xl font-bold ">Welcome to WarmPaws</h1>
           <p className="mb-5">Please log in or sign up to continue.</p>
         </div>
         <div>
           <Outlet />
         </div>
       </main>
-      <footer>
         <Footer />
-      </footer>
     </div>
   );
 };

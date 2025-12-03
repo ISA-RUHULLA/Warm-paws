@@ -11,6 +11,8 @@ import ForgotPassword from "../pages/ForgetPassword";
 import NotFound from "../pages/NotFound";
 import ServiceCard from "../components/home_components/ServiceCard";
 import Register from "../pages/Register";
+import About from "../components/home_components/About";
+import Support from "../components/home_components/Support";
 
 const router = createBrowserRouter([
   {
@@ -26,11 +28,17 @@ const router = createBrowserRouter([
         element: <ServiceCard />,
       },
       {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "support",
+        element: <Support />,
+      },
+      {
         path: "service/:id",
         element: (
-          <PrivateRoute>
             <ServiceDetails />
-          </PrivateRoute>
         ),
       },
       {

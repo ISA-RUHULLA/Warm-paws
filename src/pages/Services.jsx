@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import bgImage from '../assets/Violet Illustrated Cat Desktop Wallpaper.jpg'
 
 const Service = () => {
     const [services, setServices] = useState([]);
@@ -12,16 +13,16 @@ const Service = () => {
     }, []);
 
     return (
-        <div className='w-11/12 mx-auto p-4 gap-5'>
+        <div className='p-4 gap-5' style={{ backgroundImage: `url(${bgImage})` }}>
             <div className='mt-5'>
-                <h2 className='flex justify-center text-2xl font-bold mb-4'>
+                <h2 className='flex justify-center text-3xl font-bold mb-4'>
                     New Arrivals Product
                 </h2>
             </div>
 
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
-                {services.slice(0, 6).map((service) => (
-                    <div key={service.serviceId} className='border-2 rounded-xl shadow-md p-4 flex flex-col items-center'>
+            <div className='container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6'>
+                {services.slice(0, 8).map((service) => (
+                    <div key={service.serviceId} className='rounded-xl shadow-md p-4 flex flex-col items-center'>
                         <img
                             src={service.image}
                             alt="image paoya gelo na"
@@ -35,7 +36,7 @@ const Service = () => {
                             Price: ${service.price}
                         </p>
                         <button
-                            className="btn btn-block bg-white text-black"
+                            className=" bg-blue-400 text-white px-4 py-2 rounded-lg mt-4 hover:bg-blue-500 transition"
                             onClick={() => navigate(`/service/${service.serviceId}`)}
                         >
                             See Details

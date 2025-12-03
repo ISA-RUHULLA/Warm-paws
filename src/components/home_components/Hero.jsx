@@ -4,9 +4,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 const Hero = () => {
   const [slides, setSlides] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("/heroSlider.json")
@@ -27,7 +29,7 @@ const Hero = () => {
       {slides.map((slide) => (
         <SwiperSlide key={slide.id}>
           <div
-            className="relative w-full h-[80vh] flex items-center justify-center bg-cover bg-center"
+            className="relative w-full h-[75vh] flex items-center justify-center bg-cover bg-center"
             style={{ backgroundImage: `url(${slide.image})` }}
           >
             <div className="absolute inset-0 bg-gradient from-black/40 to-black/60"></div>
@@ -38,7 +40,7 @@ const Hero = () => {
               <p className="text-lg md:text-xl mb-6 drop-shadow-md animate-fadeInUp delay-200">
                 {slide.subtitle}
               </p>
-              <button className="btn bg-white text-gray-900 hover:bg-blue-400 border-none font-semibold rounded-full px-6 py-2 animate-fadeInUp delay-400">
+              <button onClick={() => navigate('/services')} className="btn bg-white text-gray-900 hover:bg-blue-400 border-none font-semibold rounded-full px-6 py-2 animate-fadeInUp delay-400">
                 Explore Winter Care
               </button>
             </div>
